@@ -8,7 +8,6 @@ public class BeginSceneViewDefault : MonoBehaviour, IBeginSceneView
 {
     [SerializeField] private Animator animator;    
 
-
     private bool canClick = false;
 
     private const string BEGIN_PATH = "Begin";

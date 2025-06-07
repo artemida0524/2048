@@ -6,6 +6,16 @@ using Zenject;
 using Debug = UnityEngine.Debug;
 
 
+
+
+
+
+
+
+
+
+
+
 public class LoadSavePlayerData : IInteractableDataPlayerPrefs
 {
     public string PATH { get; } = "PlayerData";
@@ -46,7 +56,7 @@ public class LoadSavePlayerData : IInteractableDataPlayerPrefs
 
 
 [Serializable]
-public class PlayerDataDTO
+public class PlayerDataDTO : PlayerDataDTOBase
 {
     public string name;
 }
@@ -58,6 +68,59 @@ public interface IInitializableData<T>
 
     void Set(T data);
 }
+
+public class PlayerDataDTOBase
+{
+
+}
+
+public interface IPlayerDataService : IGetDataServise<PlayerDataDTOBase>, IInitializableData<PlayerDataDTOBase>
+{
+
+}
+
+//public abstract class PLayerDataServiceBase : IPlayerDataService
+//{
+//    protected bool canInitializationData { get; private set; } = true;
+//    protected /*virtual*/ PlayerDataDTOBase playerData { get; set; }
+
+//    public abstract PlayerDataDTOBase Get { get; }
+
+//    public bool CanInitializationData => canInitializationData;
+
+//    public virtual void Set(PlayerDataDTOBase data)
+//    {
+//        if (canInitializationData)
+//        {
+//            this.playerData = data;
+//            canInitializationData = false;
+
+//            return;
+//        }
+
+//        throw new InvalidOperationException("Object Already Initialization");
+//    }
+//}
+
+//public class PLayerDataServiceConfig : PLayerDataServiceBase
+//{
+
+
+//    public override PlayerDataDTOBase Get
+//    {
+//        get
+//        {
+//            if(playerData == null)
+//            {
+//                Debug.Log("null");
+//                playerData = new PlayerDataDTO();
+//            }
+//            return playerData;
+//        }
+//    }
+//}
+
+
 
 public class PlayerDataService : IGetDataServise<PlayerDataDTO>, IInitializableData<PlayerDataDTO>
 {

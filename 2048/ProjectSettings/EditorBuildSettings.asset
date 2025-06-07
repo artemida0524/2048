@@ -14,4 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ProjectBuild/MainScene/Scenes/MainScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/ProjectBuild/BattleScene/Scene/BattleScene.unity
+    guid: eca61e01e1ae5634197674ebe4015f43
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ddf8a3b7898313549897c7ed176015f9, type: 2}

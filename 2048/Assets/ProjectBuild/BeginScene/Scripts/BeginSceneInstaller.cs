@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
@@ -28,15 +27,16 @@ public class BeginSceneInstaller : MonoInstaller
     {
         InitializationDictionaryView();
 
-        view = InstantiateView(GetView(type));
+        // код з warning
+        view = GetView(type);
+
 
         Container
                 .Bind<IBeginSceneView>()
-                .FromInstance(view)
-                .AsSingle();
+                .FromComponentInNewPrefab(view as Object)
+                .AsSingle()
+                .NonLazy();
     }
-
-
 
     private IBeginSceneView InstantiateView(IBeginSceneView view) => Container.InstantiatePrefabForComponent<IBeginSceneView>(view as UnityEngine.Object);
 
@@ -48,7 +48,7 @@ public class BeginSceneInstaller : MonoInstaller
         {
             {BeginSceneType.Default, beginSceneViewDefault },
             {BeginSceneType.Advanced, beginSceneViewAdvanced },
-            
+
         };
     }
 

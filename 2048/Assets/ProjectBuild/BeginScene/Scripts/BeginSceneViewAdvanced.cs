@@ -45,6 +45,9 @@ public class BeginSceneViewAdvanced : MonoBehaviour, IBeginSceneView
     {
         OnFinishAnimation?.Invoke();
 
-        SceneManager.LoadScene(2);
+        //SceneManager.LoadScene(2);
+
+
+        LoadingSceneHandler.Instance.LoadScene(2);
     }
 }

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1910632232066904218}
   - component: {fileID: 5217031177992344525}
   - component: {fileID: 5680422674567525726}
+  - component: {fileID: 9118362436663365855}
+  - component: {fileID: -8078592054657309285}
   m_Layer: 0
   m_Name: ProjectContext
   m_TagString: Untagged
@@ -49,9 +51,11 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 5217031177992344525}
+  - {fileID: 9118362436663365855}
   - {fileID: 5680422674567525726}
+  - {fileID: -8078592054657309285}
   _installerPrefabs: []
-  _parentNewObjectsUnderContext: 1
+  _parentNewObjectsUnderContext: 0
   _editorReflectionBakingCoverageMode: 0
   _buildsReflectionBakingCoverageMode: 0
   _settings:
@@ -88,5 +92,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c16f5a8299c30d4fa0f675a72e582c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingSceneDefault: {fileID: 3308013309990202799, guid: e0bafbd0d73344145bfdb7dc87356f5f, type: 3}
-  type: 0
+  loadingSceneView: {fileID: 6912319502110069856, guid: e0bafbd0d73344145bfdb7dc87356f5f, type: 3}
+--- !u!114 &9118362436663365855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8899591867526020491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33f3c40f5da11b54b86ca4adf4168d85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioHandler: {fileID: 2388805033472369302, guid: de22abe3eb843e248a0be1b1a33b1083, type: 3}
+--- !u!114 &-8078592054657309285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8899591867526020491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289dcef0d5db8b0478ed8449a38e7edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

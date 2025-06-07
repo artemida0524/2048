@@ -10,11 +10,23 @@ public class BootStrap : MonoBehaviour
 
     public event Action OnInitialization;
 
+
+    ////
+    private LoadSavePlayerDataBase[] playerData;
+    ///
+
+    //[Inject]
+    //private void Construct(IInteractableDataPlayerPrefs[] playerPrefs, PlayerDataService playerDataService)
+    //{
+    //    this.playerPrefs = playerPrefs;
+    //    this.playerDataService = playerDataService;
+    //}
+
+
     [Inject]
-    private void Construct(IInteractableDataPlayerPrefs[] playerPrefs, PlayerDataService playerDataService)
+    private void Construct(LoadSavePlayerDataBase[] playerData)
     {
-        this.playerPrefs = playerPrefs;
-        this.playerDataService = playerDataService;
+        this.playerData = playerData;
     }
 
     private void Start()
@@ -27,7 +39,7 @@ public class BootStrap : MonoBehaviour
 
         //Application.quitting += SaveDataFromServices;
 
-
+        PlayerPrefs.SetString("PlayerData", JsonUtility.ToJson(new PlayerDataDTO() { name = "Nigger" }));
 
 
         GoToNextScene();
@@ -36,10 +48,16 @@ public class BootStrap : MonoBehaviour
 
     private void InitializationDataFromPlayerPrefs()
     {
-        foreach (var item in playerPrefs)
-        {
-            item.Load();
-        }
+        //foreach (var item in playerPrefs)
+        //{
+        //    item.Load();
+        //}
+
+        //foreach (var item in playerData)
+        //{
+        //    item.Load();
+        //}
+
     }
 
 

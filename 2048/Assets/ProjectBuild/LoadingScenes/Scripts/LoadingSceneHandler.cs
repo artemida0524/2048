@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 public class LoadingSceneHandler : MonoBehaviour
@@ -25,6 +26,7 @@ public class LoadingSceneHandler : MonoBehaviour
     [Inject]
     private void Construct(ILoadingScene loadingScene)
     {
+        Debug.Log("initialize");
         this.loadingScene = loadingScene;
     }
 
@@ -36,6 +38,8 @@ public class LoadingSceneHandler : MonoBehaviour
 
     private IEnumerator LoadSceneEnumerator(int index)
     {
+
+
         yield return loadingScene.LoadScene();
         yield return loadingScene.FinishLoadScene(index);
 
